@@ -9,7 +9,6 @@ def get_list(data):
 
     conn = get_db_connection()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
-    cursor.execute('SET search_path TO "MercadoOnline";')
     response = []
 
     # Si el término de búsqueda está vacío, devuelve todos los productos
