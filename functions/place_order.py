@@ -10,7 +10,6 @@ def place_order(order_data):
     print(productos_no_str)
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute('SET search_path TO "MercadoOnline";')
 
     # Generate a unique tracking code and insert the order
     codigo_trackeo = order_data.get('codigo_trackeo')
