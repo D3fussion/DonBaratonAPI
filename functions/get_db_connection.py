@@ -1,5 +1,5 @@
 import psycopg2
-
+import os
 
 URL = os.environ.get('SQL_KEY')
 
