@@ -14,7 +14,6 @@ def get_products(data):
     # Conectar a la base de datos
     conn = get_db_connection()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
-    cursor.execute('SET search_path TO "MercadoOnline";')
 
     # Obtener los productos de la base de datos cuyas IDs coinciden con las del carrito
     query = "SELECT id, nombre, precio_despues_descuento, link_imagen1, stock_disponible FROM productos WHERE id = ANY(%s)"
