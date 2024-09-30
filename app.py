@@ -6,8 +6,8 @@ import redis
 
 app = Flask(__name__)
 app.secret_key = '^gK2V^_Qd?10'
-app.config['SESSION_TYPE'] = 'redis'
-app.config['SESSION_REDIS'] = redis.Redis(host='localhost', port=6379)
+app.config["SESSION_PERMANENT"] = True
+app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 CORS(app, supports_credentials=True)
 
