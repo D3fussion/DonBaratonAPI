@@ -5,7 +5,6 @@ import functions
 
 app = Flask(__name__)
 app.secret_key = '^gK2V^_Qd?10'
-app.config["SESSION_PERMANENT"] = True
 app.config['SESSION_TYPE'] = 'redis'
 app.config['SESSION_REDIS'] = redis.Redis(host='localhost', port=6379)
 Session(app)
