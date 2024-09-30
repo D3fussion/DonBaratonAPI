@@ -1,12 +1,8 @@
 import psycopg2
 
 
+URL = os.environ.get('SQL_KEY')
+
 def get_db_connection():
-    conn = psycopg2.connect(
-        host="localhost",
-        database="postgres",
-        user="postgres",
-        password="7956",
-        port="5432"
-    )
+    conn = psycopg2.connect(URL)
     return conn
