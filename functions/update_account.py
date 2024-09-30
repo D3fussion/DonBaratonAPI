@@ -47,7 +47,6 @@ def update_account(data):
     # Conectar a la base de datos y ejecutar la actualización
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute('SET search_path TO "MercadoOnline";')
 
     cursor.execute(update_query, update_values)
     conn.commit()
