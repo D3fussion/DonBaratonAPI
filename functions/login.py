@@ -9,7 +9,6 @@ def login(data):
 
     conn = get_db_connection()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
-    cursor.execute('SET search_path TO "MercadoOnline";')
 
     # Verificar si el email y la contraseña coinciden con algún usuario en la base de datos
     cursor.execute('SELECT * FROM usuarios WHERE email = %s AND password = %s', (email, password))
