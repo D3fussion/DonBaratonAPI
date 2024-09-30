@@ -9,7 +9,6 @@ def get_orders():
     else:
         conn = get_db_connection()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute('SET search_path TO "MercadoOnline";')
         cursor.execute("SELECT * FROM ordenes WHERE email_usuario = %s", (email,))
         orders = cursor.fetchall()
         print(orders)
