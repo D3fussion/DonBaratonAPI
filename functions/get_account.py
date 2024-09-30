@@ -8,7 +8,6 @@ def get_account():
         return jsonify({"message": "User not logged in"}), 401  # Si no está logueado
     conn = get_db_connection()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
-    cursor.execute('SET search_path TO "MercadoOnline";')
     # Buscar la cuenta del usuario en la base de datos
     cursor.execute("SELECT email, first_name, last_name, address, addInfo, phone_number FROM usuarios WHERE email = %s",
                    (email,))
