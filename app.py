@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_session import Session
 import functions
 import redis
+import os
 
 app = Flask(__name__)
 app.secret_key = '^gK2V^_Qd?10'
